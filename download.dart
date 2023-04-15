@@ -54,25 +54,13 @@ print(extension);
             print("FILE $filename HAS PROGRESS $process") ;
           },
           onDownloadCompleted: (String path){
-            SnackBar(
-              content:  Text('File saved to Gallery'),
-              action: SnackBarAction(
-                label: 'OK',
-                onPressed: () {
-                  // Some code to undo the change.
-                },
-              ),
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('File saved to Gallery')),
             );
           },
           onDownloadError: (String error){
-            SnackBar(
-              content:  Text('Failed To Download file'),
-              action: SnackBarAction(
-                label: 'OK',
-                onPressed: () {
-                  // Some code to undo the change.
-                },
-              ),
+           ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('File saved to Gallery')),
             );
           }
       );
